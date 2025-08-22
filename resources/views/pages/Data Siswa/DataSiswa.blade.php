@@ -11,7 +11,7 @@
                             @endif
                        <form action="{{ route('siswa.store')}}" method="POST" enctype="multipart/form-data">
                                   @csrf
-                                <label for="form-control form-control-user" >NISN</label>                                
+                                <label for="form-control form-control-user" >NIS</label>                                
                                 <div class="form-group">
                                  <input type="text" class="form-control" name="NISN" id="" required>
                                 </div>

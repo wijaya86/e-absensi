@@ -20,7 +20,7 @@
                 <!-- Nama & NISN -->
                 <div class="mt-2">
                     <h5 class="card-title mb-1">{{ $siswa->NamaSiswa }}</h5>
-                    <p class="text-muted small mb-1">NISN: {{ $siswa->NISN }}</p>
+                    <p class="text-muted small mb-1">NIS: {{ $siswa->NISN }}</p>
                     <p class="text-muted small mb-1">Kelas: {{ $siswa->kelasi->NamaKelas }}</p>
                 </div>
                 

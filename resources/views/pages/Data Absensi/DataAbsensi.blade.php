@@ -8,7 +8,7 @@
                         <div class="card-body">
                        <form action="{{ route('manual.store')}}" method="POST" >
                                   @csrf
-                                <label for="form-control form-control-user" >NISN</label>                                
+                                <label for="form-control form-control-user" >NIS</label>                                
                                 <div class="form-group">
                                  <input type="text" class="form-control" name="NISN" id="" required>
                                 </div>

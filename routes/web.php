@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\SessionAuth;
 use App\Http\Controllers\AuthController;
+// use Illuminate\Support\Facades\Artisan;
+// use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
+
+
 Route::get('/', function () {
     return view('login');
 });
@@ -24,3 +29,29 @@ Route::resource('import1', \App\Http\Controllers\WalikelImportController::class)
 Route::resource('card', \App\Http\Controllers\CardController::class)->middleware('auth');
 Route::resource('chart', \App\Http\Controllers\GrafikController::class)->middleware('auth');
 Route::resource('rekapkehadiran', \App\Http\Controllers\RekapkehadiranController::class)->middleware('auth');
+
+Route::get('/backup-sekarang', function () {
+    $db   = env('DB_DATABASE');
+    $user = env('DB_USERNAME');
+    $pass = env('DB_PASSWORD');
+    $host = env('DB_HOST', '127.0.0.1');
+
+    $fileName = $db . '_backup_' . date('Y-m-d_H-i-s') . '.sql';
+
+    $command = "mysqldump -h {$host} -u {$user}";
+    if (!empty($pass)) {
+        $command .= " -p\"{$pass}\"";
+    }
+    $command .= " {$db}";
+
+    $dumpOutput = shell_exec($command);
+
+    if (!$dumpOutput) {
+        return "❌ Gagal membuat backup, cek konfigurasi database.";
+    }
+
+    return Response::make($dumpOutput, 200, [
+        'Content-Type' => 'application/sql',
+        'Content-Disposition' => "attachment; filename=\"{$fileName}\"",
+    ]);
+});

@@ -9,7 +9,7 @@ use App\Models\Siswa;
 use Illuminate\Http\Request;
 //import return type View
 use Illuminate\View\View;
-
+use Illuminate\Support\Facades\DB;
 //import return type redirectResponse
 use Illuminate\Http\RedirectResponse;
 class SiswaController extends Controller
@@ -90,7 +90,26 @@ class SiswaController extends Controller
      */
     public function update(Request $request, Siswa $siswa)
     {
-        //
+        $request->validate([
+        'NISN' => 'required',
+        'NamaSiswa' => 'required',
+        'Jenkel' => 'required|in:L,P',
+        'id_Kelas' => 'required|exists:Kelasis,id',
+        ]);
+
+        // generate payload untuk QR
+        $payload = $request->NISN . ' - ' . $request->NamaSiswa;
+        $qr = base64_encode(QrCode::format('png')->size(200)->generate($payload));
+
+        // update data siswa + qr code
+        $siswa->update([
+            'NISN' => $request->NISN,
+            'NamaSiswa' => $request->NamaSiswa,
+            'Jenkel' => $request->Jenkel,
+            'id_Kelas' => $request->id_Kelas,
+            'qrcode' => $qr,
+        ]);
+            return redirect()->route('siswa.index')->with('success', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -98,6 +117,7 @@ class SiswaController extends Controller
      */
     public function destroy(Siswa $siswa)
     {
-        //
+        $siswa->delete();
+        return redirect()->route('siswa.index')->with('success', 'Data kelas berhasil dihapus.');
     }
 }

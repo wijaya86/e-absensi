@@ -64,7 +64,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'id_akses' =>'required'
+        ]);
+
+       // update tabel walikel
+            $user->update([
+                'email' => $request->email,
+                'password' => $request->password,
+                'id_akses' => $request->id_akses,
+            ]);
+            return redirect()->route('user.index')->with('success', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -72,6 +84,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+         $user->delete();
+        return redirect()->route('user.index')->with('success', 'Data kelas berhasil dihapus.');
     }
 }

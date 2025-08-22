@@ -48,7 +48,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>NISN</th>
+                        <th>NIS</th>
                         <th>Nama Siswa</th>
                         <th>Nama Kelas</th>
                         <th>Hadir</th>
@@ -60,7 +60,7 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>NISN</th>
+                        <th>NIS</th>
                         <th>Nama Siswa</th>
                         <th>Nama Kelas</th>
                         <th>Hadir</th>

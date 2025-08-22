@@ -37,7 +37,7 @@
         <thead>
             <tr>
                 <th>Tanggal</th>
-                <th>NISN</th>
+                <th>NIS</th>
                 <th>Nama Siswa</th>
                 <th>L/P</th>
                 <th>Kelas</th>

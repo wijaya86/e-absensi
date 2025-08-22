@@ -94,12 +94,25 @@ class WalikelController extends Controller
     public function update(Request $request, Walikel $walikel)
     {
           $request->validate([
-            'NamaKelas' => 'required',
-            'Jurusan' => 'required'
+            'NIP' => 'required',
+            'NamaGuru' => 'required',
+            'id_Kelas' =>'required'
         ]);
 
-        $kelasi->update($request->all());
-        return redirect()->route('kelasi.index')->with('success', 'Data kelas berhasil diperbarui.');
+       // update tabel walikel
+            $walikel->update([
+                'NIP' => $request->NIP,
+                'NamaGuru' => $request->NamaGuru,
+                'id_Kelas' => $request->id_Kelas,
+            ]);
+
+            // update tabel user yg berelasi
+            $user = User::where('NIP', $walikel->NIP)->firstOrFail();
+            $user->update([
+                'name' => $request->NamaGuru,
+                'NIP'  => $request->NIP,
+            ]);
+        return redirect()->route('walikel.index')->with('success', 'Data kelas berhasil diperbarui.');
     
     }
 
@@ -108,7 +121,7 @@ class WalikelController extends Controller
      */
     public function destroy(Walikel $walikel)
     {
-         $kelasi->delete();
-        return redirect()->route('kelasi.index')->with('success', 'Data kelas berhasil dihapus.');
+         $walikel->delete();
+        return redirect()->route('walikel.index')->with('success', 'Data kelas berhasil dihapus.');
     }
 }

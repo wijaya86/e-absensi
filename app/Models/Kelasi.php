@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelasi extends Model
 {
+     protected $table = 'kelasis';   // nama tabel di DB
+    protected $primaryKey = 'id'; // kalau PK nya id_Kelas
    protected $fillable = [
         'NamaKelas',
         'Jurusan'

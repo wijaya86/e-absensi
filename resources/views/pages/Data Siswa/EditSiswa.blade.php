@@ -12,7 +12,7 @@
                        <form action="{{ route('siswa.update',$siswa->id)}}" method="POST" >
                                   @csrf
                                    @method('PUT')
-                                <label for="form-control form-control-user" >NISN</label>                                
+                                <label for="form-control form-control-user" >NIS</label>                                
                                 <div class="form-group">
                                  <input type="text" class="form-control" name="NISN" id="" value="{{ $siswa->NISN }}" readonly>
                                 </div>
@@ -23,18 +23,20 @@
                                 <label for="form-control form-control-user">Jenis Kelamin</label><br>
                                  <div class="form-group">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Jenkel" id="laki_laki" value="L">
+                                    <input class="form-check-input" type="radio" name="Jenkel" id="laki_laki" value="L" 
+                                     {{ old('Jenkel', $siswa->Jenkel) == 'L' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="laki_laki">Laki-laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Jenkel" id="perempuan" value="P">
+                                    <input class="form-check-input" type="radio" name="Jenkel" id="perempuan" value="P"
+                                     {{ old('Jenkel', $siswa->Jenkel) == 'P' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="perempuan">Perempuan</label>
                                 </div>
                                </div>
                                 <label for=" form-control form-control-user" >Kelas</label>                                
                                 <div class="form-group">
                                     <select name="id_Kelas" class="form-control"  id="">
-                                        <option selected value="{{ $siswa->id }}">{{ $siswa->kelasi->NamaKelas }}</option>
+                                        <option selected value="{{ $siswa->id_Kelas }}">{{ $siswa->kelasi->NamaKelas }}</option>
                                         <option>Silahkan Pilih</option>
                                         @foreach ($kelas as $kls)
                                         <option value="{{ $kls->id }}">{{ $kls->NamaKelas }}</option>

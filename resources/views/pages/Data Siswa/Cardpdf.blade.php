@@ -59,7 +59,7 @@
             <div>
                 <br>
                 <strong>{{ $siswa->NamaSiswa }}</strong><br>
-                NISN: {{ $siswa->NISN }}<br>
+                NIS: {{ $siswa->NISN }}<br>
                 Kelas: {{ $siswa->kelasi->NamaKelas }}
             </div>
             @if($siswa->qrcode)

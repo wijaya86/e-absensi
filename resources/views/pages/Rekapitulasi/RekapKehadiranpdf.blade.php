@@ -37,7 +37,7 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>NISN</th>
+                <th>NIS</th>
                 <th>Nama Siswa</th>
                 <th>Kelas</th>
                 <th>Hadir</th>

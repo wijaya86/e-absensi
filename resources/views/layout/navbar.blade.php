@@ -108,7 +108,7 @@
                 <div id="collapseset" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('user.index')}}">Data User</a>
-                        <a class="collapse-item" href="#">Backup Data</a>
+                        <a class="collapse-item" href="{{ url('/backup-sekarang') }}">Backup Data</a>
 
                     </div>
                 </div>
@@ -207,6 +207,8 @@
                             use App\Models\Walikel;
 
                             $jumlahSiswa = Siswa::count();
+                            $jumlahLaki = Siswa::where('Jenkel', 'L')->count();
+                            $jumlahPerempuan = Siswa::where('Jenkel', 'P')->count();
                             $jumlahGuru = Walikel::count();
                         @endphp
                         <!-- Earnings (Monthly) Card Example -->
@@ -251,19 +253,13 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Hadir
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Laki- laki
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $jumlahLaki }}  /Orang</div>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -281,8 +277,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Jumlah Tidak Hadir</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                Jumlah Perempuan</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $jumlahPerempuan }}  /Orang</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>

@@ -49,9 +49,12 @@
                                         <i class="fas fa-info-circle"></i>
                                     </a>
                                     </a> 
-                                    <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="tooltip" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </a></td>                                                                                  
+                                   <form action="{{ route('walikel.destroy', $walas->id) }}" method="POST">
+                                     @csrf @method('DELETE')
+                                    <button class="btn btn-danger btn-circle btn-sm" data-toggle="tooltip" title="Delete" onclick="return confirm('Yakin?')">
+                                        <i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>                                                                                    
                                         </tr>  
                                         @endforeach                                                                                                               
                                     </tbody>

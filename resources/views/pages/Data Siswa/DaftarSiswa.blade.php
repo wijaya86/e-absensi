@@ -22,7 +22,7 @@
                                 <thead>
                                         <tr>
                                              <th>No</th>
-                                            <th>NISN</th>
+                                            <th>NIS</th>
                                             <th>Nama Siswa</th>
                                             <th>L/P</th>
                                             <th>Kelas</th>
@@ -33,7 +33,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
-                                            <th>NISN</th>
+                                            <th>NIS</th>
                                             <th>Nama Siswa</th>
                                             <th>L/P</th>
                                             <th>Kelas</th>
@@ -57,9 +57,11 @@
                                                 <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-warning btn-circle btn-sm" data-toggle="tooltip" title="Edit">
                                                     <i class="fas fa-info-circle"></i>
                                                </a>
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="tooltip" title="Delete">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
+                                                <form action="{{ route('siswa.destroy', $siswa->id) }}" method="POST">
+                                                @csrf @method('DELETE')
+                                                <button class="btn btn-danger btn-circle btn-sm" data-toggle="tooltip" title="Delete" onclick="return confirm('Yakin?')">
+                                                    <i class="fas fa-trash"></i></button>
+                                                </form>
                                             </td>                                                                                  
                                         </tr> 
                                         @endforeach                                                                                                                
