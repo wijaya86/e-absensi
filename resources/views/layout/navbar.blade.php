@@ -222,7 +222,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahSiswa }}  /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-graduate fa-3x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahGuru }} /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
+                                            <i class="fas fa-chalkboard-teacher fa-3x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
+                                            <i class="fas fa-male fa-4x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $jumlahPerempuan }}  /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
+                                            <i class="fas fa-female fa-4x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>

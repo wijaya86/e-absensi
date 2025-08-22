@@ -54,4 +54,4 @@ Route::get('/backup-sekarang', function () {
         'Content-Type' => 'application/sql',
         'Content-Disposition' => "attachment; filename=\"{$fileName}\"",
     ]);
-});
+})->middleware('auth');
