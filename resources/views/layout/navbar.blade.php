@@ -36,7 +36,7 @@
               <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('absensi.create')}}">
-                    <i class="fas fa-fw fa-calendar"></i>
+                    <i class="fas fa-clipboard-list"></i>
                     <span>Data Absensi</span></a>
             </li>
 
@@ -44,7 +44,7 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('absensi.index')}}">
-                    <i class="fas fa-fw fa-play-circle"></i>
+                    <i class="fas fa-qrcode"></i>
                     <span>Scan Qris</span></a>
             </li>
 
@@ -222,7 +222,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahSiswa }}  /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jumlahGuru }} /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $jumlahPerempuan }}  /Orang</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            <i class="fas fa-user-check fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
