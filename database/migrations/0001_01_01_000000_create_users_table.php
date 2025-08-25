@@ -18,10 +18,13 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('NIP');
+             $table->unsignedBigInteger('id_akses');
             $table->rememberToken();
             $table->timestamps();
-        });
 
+            $table->foreign('id_akses')->references('id')->on('aksesis')->onDelete('cascade');
+        });
+        
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');

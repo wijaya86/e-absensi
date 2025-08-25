@@ -12,6 +12,7 @@
                                 <div class="form-group">
                                  <input type="text" class="form-control" name="NamaKelas" id="" required>
                                 </div>
+                                 <label for="" form-control form-control-user" >Jurusan</label>  
                                 <div class="form-group">
                                     <select name="Jurusan" class="form-control"  id="">
                                         <option selected>Silahkan Pilih</option>
@@ -19,6 +20,7 @@
                                          <option value="MPLB">MPLB</option>
                                         <option value="ATPH">ATPH</option>
                                         <option value="APAT">APAT</option>
+                                        <option value="NKPI">APHP</option>
                                         <option value="NKPI">NKPI</option>
                                     </select>
                                 </div>

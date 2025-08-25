@@ -76,11 +76,16 @@
             
             <!-- Divider -->
             <hr class="sidebar-divider">
+                @php
+                    $role = Auth::user()->id_akses;
+                @endphp
+                @if($role == 1) <!-- Admin -->
 
             <!-- Heading -->
             <div class="sidebar-heading">
                 Master Data
             </div>
+            
              <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsedata"
@@ -113,10 +118,7 @@
                     </div>
                 </div>
             </li>
-
-          
-
-           
+            @endif           
 
         </ul>
         <!-- End of Sidebar -->

@@ -16,11 +16,11 @@ return new class extends Migration
             $table->unsignedBigInteger('NIP');
             $table->string('NamaGuru');
             $table->unsignedBigInteger('id_Kelas');
-            $table->unsignedBigInteger('id_akses');
+           
             $table->timestamps();
 
            $table->foreign('id_Kelas')->references('id')->on('kelasis')->onDelete('cascade');
-           $table->foreign('id_akses')->references('id')->on('aksesis')->onDelete('cascade');
+           
         });
     }
 
