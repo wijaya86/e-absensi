@@ -195,10 +195,11 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @php $role = $user->id_akses; @endphp
+                
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard - {{ $user->akses->akses }} </h1>
                        
                     </div>
 
