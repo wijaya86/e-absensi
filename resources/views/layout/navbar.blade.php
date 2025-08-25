@@ -77,9 +77,9 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
                 @php
-                    $role = Auth::user()->id_akses;
+                    $user = Auth::user()->id_akses;
                 @endphp
-                @if($role == 1) <!-- Admin -->
+                @if($user == 1) <!-- Admin -->
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -195,11 +195,14 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @php $role = $user->id_akses; @endphp
-                
+                  @php
+                     $user = auth()->user();
+                        $role = $user->akses->akses;
+                    @endphp
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard - {{ $user->akses->akses }} </h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard - {{ $role }} </h1>
                        
                     </div>
 
