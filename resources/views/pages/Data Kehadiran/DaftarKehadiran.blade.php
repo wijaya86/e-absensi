@@ -13,14 +13,14 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                                   <thead>
                                         <tr>
-                                            <th>Id Kehadiran</th>
+                                            <th>No</th>
                                             <th>Kehadiran</th>
                                             <th>Tool</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                           <th>Id Kehadiran</th>
+                                           <th>No</th>
                                             <th>Kehadiran</th>
                                             <th>Tool</th>
                                         </tr>

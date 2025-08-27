@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('NISN');
             $table->unsignedBigInteger('id_Kehadiran');
             $table->timestamps();
-             $table->foreign('id_Kehadiran')->references('id')->on('Kehadiran')->onDelete('cascade');
-           $table->foreign('id_Walas')->references('id')->on('walikels')->onDelete('cascade');
+             $table->foreign('id_Kehadiran')->references('id')->on('Kehadirans')->onDelete('cascade');
+           
         });
     }
 

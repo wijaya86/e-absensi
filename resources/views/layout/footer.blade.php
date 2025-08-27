@@ -59,6 +59,7 @@
    
 <script src="{{url('assets/js/html5-qrcode.min.js')}}"></script>
 <script>
+    
     const html5QrCode = new Html5Qrcode("reader");
     html5QrCode.start(
         { facingMode: "environment" }, // gunakan kamera belakang kalau tersedia
@@ -79,6 +80,7 @@
         console.error("Gagal akses kamera:", err);
     });
 </script>
+
  <script>
 function togglePassword() {
     const input = document.getElementById('password');

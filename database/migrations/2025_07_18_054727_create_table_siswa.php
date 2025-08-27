@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('NISN');
             $table->string('NamaSiswa');
-            $table->enum('jenis_kelamin', ['L','P']);
+            $table->enum('Jenkel', ['L','P']);
             $table->unsignedBigInteger('id_Kelas');
-            $table->string('qrcode');
+            $table->longtext('qrcode')->nullable();;
             $table->timestamps();
 
             $table->foreign('id_Kelas')->references('id')->on('kelasis')->onDelete('cascade');

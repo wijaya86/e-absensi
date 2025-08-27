@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'admin123',
             'NIP' => '193384994',
+            'id_akses'=>'1',
         ]);
     }
 }

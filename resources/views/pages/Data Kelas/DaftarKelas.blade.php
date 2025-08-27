@@ -14,7 +14,7 @@
                                   
                                 <thead>
                                         <tr>
-                                            <th>Id Kelas</th>
+                                            <th>No</th>
                                             <th>Nama Kelas</th>
                                             <th>Jurusan</th>
                                             <th>Tool</th>
@@ -22,7 +22,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                           <th>Id Kelas</th>
+                                           <th>No</th>
                                             <th>Nama Kelas</th>
                                              <th>Jurusan</th>
                                             <th>Tool</th>
