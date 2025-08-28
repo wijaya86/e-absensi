@@ -37,7 +37,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('absensi.create')}}">
                     <i class="fas fa-clipboard-list"></i>
-                    <span>Data Absensi</span></a>
+                    <span>Absensi Manual</span></a>
             </li>
 
             
@@ -45,7 +45,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('absensi.index')}}">
                     <i class="fas fa-qrcode"></i>
-                    <span>Scan Qris</span></a>
+                    <span>Scan Absen Qris</span></a>
             </li>
 
 
@@ -97,6 +97,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{route('siswa.index')}}">Data Siswa</a>
                         <a class="collapse-item" href="{{route('card.index')}}">Data Kartu</a>
+                         <a class="collapse-item" href="{{route('manual.index')}}">Data Absensi</a>
                         <a class="collapse-item" href="{{route('kelasi.index')}}">Data Kelas</a>
                         <a class="collapse-item" href="{{route('walikel.index')}}">Data Wali Kelas</a>
                         <a class="collapse-item" href="{{ route('kehadiran.index')}}">Data Kehadiran</a>

@@ -79,7 +79,8 @@ class AbsensiController extends Controller
      */
     public function edit(Absensi $absensi)
     {
-        //
+          $kehadiran = Kehadiran::get();
+        return view('pages/Data Absensi/EditAbsensi',compact('absensi','kehadiran'));
     }
 
     /**
@@ -87,7 +88,14 @@ class AbsensiController extends Controller
      */
     public function update(Request $request, Absensi $absensi)
     {
-        //
+         $request->validate([
+            'NISN' => 'required',
+            'tanggal' => 'required',
+            'id_Kehadiran'=>'required'
+        ]);
+
+        $absensi->update($request->all());
+        return redirect()->route('manual.index')->with('success', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -95,6 +103,7 @@ class AbsensiController extends Controller
      */
     public function destroy(Absensi $absensi)
     {
-        //
+         $absensi->delete();
+        return redirect()->route('manual.index')->with('success', 'Data kelas berhasil dihapus.');
     }
 }

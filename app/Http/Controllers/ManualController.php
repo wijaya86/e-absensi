@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Absensi;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 //import return type View
 use Illuminate\View\View;
 
@@ -18,7 +19,15 @@ class ManualController extends Controller
      */
     public function index()
     {
-        //
+        $query = DB::table('absensis')
+                ->join('kehadirans', 'absensis.id_Kehadiran', '=', 'kehadirans.id')
+                ->join('siswas', 'absensis.NISN', '=', 'siswas.NISN')
+                ->join('kelasis', 'siswas.id_Kelas', '=', 'kelasis.id')
+                ->select('absensis.id','absensis.tanggal', 'siswas.NISN', 'siswas.NamaSiswa', 'siswas.Jenkel',
+                        'kelasis.NamaKelas', 'kehadirans.kehadiran')
+                ->orderBy('absensis.tanggal', 'asc');
+                $rekap = $query->get();
+                return view('pages/Data Absensi/DaftarAbsensi',compact('rekap'));
     }
 
     /**
