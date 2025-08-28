@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absensi;
+// use App\Models\Siswa;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 //import return type View
@@ -43,6 +44,7 @@ class ManualController extends Controller
      */
     public function store(Request $request)
     {
+         
         $request->validate([
            'NISN'         => 'required',
            'tanggal'         => 'required',
@@ -64,9 +66,29 @@ class ManualController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function autocomplete(Request $request)
     {
-        //
+        $term = $request->get('term', '');
+
+            $siswas = \App\Models\Siswa::where('NamaSiswa', 'LIKE', '%' . $term . '%')
+                ->orWhere('NISN', 'LIKE', '%' . $term . '%')
+                ->limit(10) // biar nggak terlalu banyak
+                ->get();
+
+            $data = [];
+            foreach ($siswas as $siswa) {
+                $data[] = [
+                    'label' => $siswa->NamaSiswa . ' (' . $siswa->NISN . ')',
+                    'value' => $siswa->NISN,
+                ];
+    }
+
+    return response()->json($data);
+    }
+
+    public function show(Request $request)
+    {
+       
     }
 
     /**

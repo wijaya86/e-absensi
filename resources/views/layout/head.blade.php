@@ -20,7 +20,7 @@
         rel="stylesheet">
          <link rel="stylesheet" href="{{ url('assets/css/bootstrap-icons.css')}}">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- Custom styles for this template-->
     <link href="{{url('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
      <link href="{{url('assets/css/dataTables.dataTables.min.css')}}" rel="stylesheet">

@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthController;
 // use Illuminate\Support\Facades\Artisan;
 // use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
-
+use App\Http\Controllers\ManualController;
 
 Route::get('/', function () {
     return view('login');
@@ -23,6 +23,9 @@ Route::resource('kelasi', \App\Http\Controllers\KelasiController::class)->middle
 Route::resource('walikel', \App\Http\Controllers\WalikelController::class)->middleware('auth');
 Route::resource('user', \App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('rekap', \App\Http\Controllers\RekapController::class)->middleware('auth');
+Route::get('/manual/autocomplete', [ManualController::class, 'autocomplete'])
+    ->name('manual.autocomplete')
+    ->middleware('auth');
 Route::resource('manual', \App\Http\Controllers\ManualController::class)->middleware('auth');
 Route::resource('import', \App\Http\Controllers\SiswaImportController::class)->middleware('auth');
 Route::resource('import1', \App\Http\Controllers\WalikelImportController::class)->middleware('auth');

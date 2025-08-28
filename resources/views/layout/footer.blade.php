@@ -48,7 +48,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{url('assets/js/sb-admin-2.min.js')}}"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
      <!-- Table-->
     <script src="{{url('assets/js/dataTables.min.js')}}"></script>
    
@@ -57,7 +58,7 @@
     <script src="{{url('assets/js/demo/datatables-demo.js')}}"></script>
     <script src="https://unpkg.com/html5-qrcode"></script>
    
-<script src="{{url('assets/js/html5-qrcode.min.js')}}"></script>
+<!-- <script src="{{url('assets/js/html5-qrcode.min.js')}}"></script> -->
 <script>
     
     const html5QrCode = new Html5Qrcode("reader");
@@ -97,6 +98,8 @@ function togglePassword() {
     }
 }
 </script>
+
+
 </body>
 
 </html>

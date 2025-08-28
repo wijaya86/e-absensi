@@ -39,6 +39,7 @@ class AbsensiController extends Controller
      */
     public function store(Request $request)
     {
+        
             $NISN = $request->input('NISN'); // dari QR code hasil scan
             $siswa = Siswa::where('NISN', $NISN)->first();
 
