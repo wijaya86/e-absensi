@@ -14,7 +14,7 @@
                                 </div>
                                 <label for=" form-control form-control-user" >Tanggal</label>                                
                                 <div class="form-group">
-                                <input type="date" class="form-control" name="tanggal" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
+                                <input type="date" class="form-control" name="tanggal" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" readonly>
                                 </div>
                                 <label for=" form-control form-control-user" >Keterangan</label>                                
                                 <div class="form-group">

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('absensis', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
-            $table->time('Jam');
             $table->unsignedBigInteger('NISN');
             $table->unsignedBigInteger('id_Kehadiran');
             $table->timestamps();
