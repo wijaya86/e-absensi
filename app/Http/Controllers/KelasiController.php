@@ -48,7 +48,7 @@ class KelasiController extends Controller
         ]);
 
          return redirect()->route('kelasi.index')
-            ->with('success','Product created successfully.');
+            ->with('message','Product created successfully.');
     }
 
     /**
@@ -78,7 +78,7 @@ class KelasiController extends Controller
         ]);
 
         $kelasi->update($request->all());
-        return redirect()->route('kelasi.index')->with('success', 'Data kelas berhasil diperbarui.');
+        return redirect()->route('kelasi.index')->with('message', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -87,6 +87,6 @@ class KelasiController extends Controller
     public function destroy(Kelasi $kelasi)
     {
          $kelasi->delete();
-        return redirect()->route('kelasi.index')->with('success', 'Data kelas berhasil dihapus.');
+        return redirect()->route('kelasi.index')->with('message', 'Data kelas berhasil dihapus.');
     }
 }

@@ -47,7 +47,7 @@ class WalikelImportController extends Controller
 
         return redirect()
             ->route('walikel.index')
-            ->with('success', 'Import Data berhasil!');
+            ->with('message', 'Import Data berhasil!');
     
     }
 

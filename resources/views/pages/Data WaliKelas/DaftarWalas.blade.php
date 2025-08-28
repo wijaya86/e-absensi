@@ -5,6 +5,11 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Daftar Wali kelas</h6>
                         </div>
+                         @if(session('message'))
+                            <div class="alert alert-success">
+                                {{ session('message') }}
+                            </div>
+                        @endif      
                         <div class="card-body">
                            <p align="right"> <a href="{{ route('walikel.create')}}" class="btn btn-success btn-circle" data-toggle="tooltip" title="Add">
                                         <i class="fas fa-plus-square "></i>

@@ -47,7 +47,7 @@ class SiswaImportController extends Controller
         $spreadsheet = IOFactory::load($file->getPathname());
         $sheet = $spreadsheet->getActiveSheet();
             Excel::import(new SiswaImport, $request->file('file'));
-             return redirect()->route('siswa.index')->with('success', 'Import dan QR code berhasil!');
+             return redirect()->route('siswa.index')->with('message', 'Import dan QR code berhasil!');
     }
 
     /**

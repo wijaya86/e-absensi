@@ -68,7 +68,7 @@ class WalikelController extends Controller
            'id_akses'         => $request->id_akses
          ]);
          return redirect()->route('walikel.index')
-            ->with('success','walas created successfully.');
+            ->with('message','walas created successfully.');
     }
 
     /**
@@ -112,7 +112,7 @@ class WalikelController extends Controller
                 'name' => $request->NamaGuru,
                 'NIP'  => $request->NIP,
             ]);
-        return redirect()->route('walikel.index')->with('success', 'Data kelas berhasil diperbarui.');
+        return redirect()->route('walikel.index')->with('message', 'Data kelas berhasil diperbarui.');
     
     }
 
@@ -122,6 +122,6 @@ class WalikelController extends Controller
     public function destroy(Walikel $walikel)
     {
          $walikel->delete();
-        return redirect()->route('walikel.index')->with('success', 'Data kelas berhasil dihapus.');
+        return redirect()->route('walikel.index')->with('message', 'Data kelas berhasil dihapus.');
     }
 }

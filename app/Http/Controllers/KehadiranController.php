@@ -47,7 +47,7 @@ class KehadiranController extends Controller
         ]);
 
          return redirect()->route('kehadiran.index')
-            ->with('success','Product created successfully.');
+            ->with('message','Product created successfully.');
        
     }
 
@@ -77,7 +77,7 @@ class KehadiranController extends Controller
         ]);
 
         $kehadiran->update($request->all());
-        return redirect()->route('kehadiran.index')->with('success', 'Data kehadiran berhasil diperbarui.');
+        return redirect()->route('kehadiran.index')->with('message', 'Data kehadiran berhasil diperbarui.');
     
     }
 
@@ -87,6 +87,6 @@ class KehadiranController extends Controller
     public function destroy(Kehadiran $kehadiran)
     {
          $kehadiran->delete();
-        return redirect()->route('kehadiran.index')->with('success', 'Data kehadiran berhasil dihapus.');
+        return redirect()->route('kehadiran.index')->with('message', 'Data kehadiran berhasil dihapus.');
     }
 }

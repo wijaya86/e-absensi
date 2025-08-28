@@ -70,7 +70,7 @@
         qrCodeMessage => {
             document.getElementById('NISN').value = qrCodeMessage;
             document.getElementById('formAbsen').submit();
-            alert("Hadir: " + qrCodeMessage);
+            // alert("Hadir: " + qrCodeMessage);
             html5QrCode.stop(); // berhenti setelah scan
         },
         errorMessage => {

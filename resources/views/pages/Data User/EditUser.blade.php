@@ -1,6 +1,12 @@
 @extends('layout.master')
 @section('content')
         <!-- DataTales Example -->
+         @if(session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Edit Data User</h6>

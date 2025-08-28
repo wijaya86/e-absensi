@@ -76,7 +76,7 @@ class UserController extends Controller
                 'password' => $request->password,
                 'id_akses' => $request->id_akses,
             ]);
-            return redirect()->route('user.index')->with('success', 'Data kelas berhasil diperbarui.');
+            return redirect()->route('user.index')->with('message', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -85,6 +85,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
          $user->delete();
-        return redirect()->route('user.index')->with('success', 'Data kelas berhasil dihapus.');
+        return redirect()->route('user.index')->with('message', 'Data kelas berhasil dihapus.');
     }
 }

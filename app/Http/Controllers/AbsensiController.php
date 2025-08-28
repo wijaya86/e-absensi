@@ -63,7 +63,7 @@ class AbsensiController extends Controller
                 'id_Kehadiran' => '1', // default
             ]);
 
-            return back()->with('success', 'Absensi berhasil!');
+            return back()->with('message', 'Absensi berhasil!');
     }
 
     /**
@@ -95,7 +95,7 @@ class AbsensiController extends Controller
         ]);
 
         $absensi->update($request->all());
-        return redirect()->route('manual.index')->with('success', 'Data kelas berhasil diperbarui.');
+        return redirect()->route('manual.index')->with('message', 'Data kelas berhasil diperbarui.');
     }
 
     /**
@@ -104,6 +104,6 @@ class AbsensiController extends Controller
     public function destroy(Absensi $absensi)
     {
          $absensi->delete();
-        return redirect()->route('manual.index')->with('success', 'Data kelas berhasil dihapus.');
+        return redirect()->route('manual.index')->with('message', 'Data kelas berhasil dihapus.');
     }
 }

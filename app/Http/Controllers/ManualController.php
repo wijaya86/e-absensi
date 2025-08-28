@@ -56,7 +56,7 @@ class ManualController extends Controller
         ]);
 
          return redirect()->route('rekap.index')
-            ->with('success','Product created successfully.');
+            ->with('message','Product created successfully.');
        
 
     }
